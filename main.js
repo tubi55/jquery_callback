@@ -18,14 +18,38 @@ var $right = $(".right");
 var $bottom = $(".bottom");
 var $left = $(".left");
 var $btn1 = $(".btn1");
+var $btn2 = $(".btn2");
 var $con = $(".con");
+var $wrap2 = $("#wrap2");
 var $close1 = $(".close1");
-var speed = 1000;
+var $close2 = $(".close2");
+var speed = 500;
 
-//박스 열기
+//박스1 열기 이벤트
 $btn1.on("click",function(e){
     e.preventDefault();
+    openBox1();       
+});
 
+//박스1 닫기 이밴트
+$close1.on("click",function(e){
+    e.preventDefault();
+    closeBox1();    
+});
+
+//박스2 열기 이벤트
+$btn2.on("click", function(e){
+    e.preventDefault();
+    openBox2();
+});
+
+//박스2 닫기 이벤트
+$close2.on("click", function(e){
+    e.preventDefault();
+    closeBox2();
+})
+
+function openBox1(){
     $top.stop().animate({width: "100%"},speed,function(){
         $right.stop().animate({height: "100%"},speed,function(){
             $bottom.stop().animate({width: "100%"},speed,function(){
@@ -36,13 +60,9 @@ $btn1.on("click",function(e){
                 });
             });
         });
-    });    
-});
-
-//박스 닫기
-$close1.on("click",function(e){
-    e.preventDefault();
-
+    }); 
+}
+function closeBox1(){
     $con.stop().fadeOut(speed/2, function(){
         $top.stop().animate({width: "0%"},speed/2);
         $right.stop().animate({height: "0%"},speed/2);
@@ -50,4 +70,14 @@ $close1.on("click",function(e){
         $left.stop().animate({height: "0%"},speed/2);
         $close1.stop().animate({right: -40, opacity: 0},speed/2);
     });
-});
+}
+function openBox2(){
+    $wrap2.stop().animate({height: 400, marginTop: -200},speed,function(){
+        $close2.stop().animate({right: 40, opacity: 1},speed);
+    })
+}
+function closeBox2(){
+    $close2.stop().animate({right: -40, opacity:1},speed/2,function(){
+        $wrap2.stop().animate({height: 0, marginTop: 0},speed/2);
+    });
+}
