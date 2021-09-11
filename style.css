@@ -9,3 +9,39 @@ ul, ol {
 a {
     text-decoration: none;
 }
+
+#wrap {
+    width: 800px; height: 400px; position: absolute; top:50%; left: 50%; margin-left: -400px; margin-top: -200px; 
+}
+#wrap .top {
+    width: 100%; height: 1px; background: #000; 
+    position: absolute; top: 0px; left: 0px;
+}
+#wrap .right {
+    width: 1px; height: 100%; background: #000;
+    position: absolute; top: 0px; right: 0px;
+}
+#wrap .bottom {
+    width: 100%; height: 1px; background: #000;
+    position: absolute; bottom: 0px; right: 0px;
+}
+#wrap .left {
+    width: 1px; height: 100%; background: #000;
+    position: absolute; bottom: 0px; left: 0px;
+}
+.btns {
+    width: 800px; position: absolute; top: 50%;
+    margin-top: 220px; left: 50%; margin-left: -400px;
+}
+.btns li {
+    float: left; margin-right: 20px;
+}
+.btns li:last-child {
+    margin-right: 0px;
+}
+.btns li a {
+    display: block; width: 390px; height:  40px; background: #444; font: bold 12px/40px "arial"; color: #bbb; text-align: center;
+}
+.btns li a.on {
+    background: #111; color: #fff;
+}
