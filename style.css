@@ -14,20 +14,28 @@ a {
     width: 800px; height: 400px; position: absolute; top:50%; left: 50%; margin-left: -400px; margin-top: -200px; 
 }
 #wrap .top {
-    width: 100%; height: 1px; background: #000; 
+    width: 0%; height: 1px; background: #000; 
     position: absolute; top: 0px; left: 0px;
 }
 #wrap .right {
-    width: 1px; height: 100%; background: #000;
+    width: 1px; height: 0%; background: #000;
     position: absolute; top: 0px; right: 0px;
 }
 #wrap .bottom {
-    width: 100%; height: 1px; background: #000;
+    width: 0%; height: 1px; background: #000;
     position: absolute; bottom: 0px; right: 0px;
 }
 #wrap .left {
-    width: 1px; height: 100%; background: #000;
+    width: 1px; height: 0%; background: #000;
     position: absolute; bottom: 0px; left: 0px;
+}
+#wrap .con {
+    width: 100%; height: 100%; background: #000;
+    position: absolute; top: 0px; left: 0px; display: none;
+}
+#wrap .con .close1 {
+    font: bold 14px/1 "arial"; color: #fff; 
+    position: absolute; top: 40px; right: -40px; opacity: 0;
 }
 .btns {
     width: 800px; position: absolute; top: 50%;
