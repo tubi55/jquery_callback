@@ -26,6 +26,20 @@ var $close2 = $(".close2");
 var speed = 500;
 var enableClick = true;
 
+var line_show = {
+    top_props : {width: "100%"},
+    right_props : {height: "100%"},
+    bottom_props : {width: "100%"},
+    left_props : {height: "100%"}
+}
+
+var line_hide = {
+    top_props : {width: "0%"},
+    right_props : {height: "0%"},
+    bottom_props : {width: "0%"},
+    left_props : {height: "0%"}
+}
+
 //btn1클릭시
 $btn1.on("click",function(e){
     e.preventDefault();
@@ -78,10 +92,10 @@ function openBox1(){
     $btn1.addClass("on");
 
     //박스1의 모션을 열기 시작
-    $top.stop().animate({width: "100%"},speed,function(){
-        $right.stop().animate({height: "100%"},speed,function(){
-            $bottom.stop().animate({width: "100%"},speed,function(){
-                $left.stop().animate({height: "100%"},speed,function(){
+    $top.stop().animate(line_show.top_props, speed,function(){
+        $right.stop().animate(line_show.right_props, speed,function(){
+            $bottom.stop().animate(line_show.bottom_props, speed,function(){
+                $left.stop().animate(line_show.left_props, speed,function(){
                     $con.stop().fadeIn(speed,function(){
                         $close1.stop().animate({right: 40, opacity:1},speed,function(){
                             //콜백함수를 이용해서 모든 모션이 끝나는 순간 다시 enableClick값을 true로 변경해서 재클릭 가능하게 수정
@@ -96,10 +110,10 @@ function openBox1(){
 function closeBox1(){
     $btn1.removeClass("on");
     $con.stop().fadeOut(speed/2, function(){
-        $top.stop().animate({width: "0%"},speed/2);
-        $right.stop().animate({height: "0%"},speed/2);
-        $bottom.stop().animate({width: "0%"},speed/2);
-        $left.stop().animate({height: "0%"},speed/2);
+        $top.stop().animate(line_hide.top_props, speed/2);
+        $right.stop().animate(line_hide.rightprops, speed/2);
+        $bottom.stop().animate(line_hide.bottom_props, speed/2);
+        $left.stop().animate(line_hide.left_props, speed/2);
         $close1.stop().animate({right: -40, opacity: 0},speed/2);
     });
 }
